@@ -405,6 +405,33 @@ REPLConsole.prototype.install = function(container) {
     container.parentNode.removeChild(container);
   }
 
+  function toggleConsoleVisibility() {
+    console.log("Haribol! Nitai Gaur")
+
+    if (localStorage.getItem('consoleMinimized') == 'false') {
+      minimizeConsole();
+    } else {
+      restoreConsole();
+    }
+  }
+
+  function minimizeConsole() {
+    var actions = container.querySelector('.console-actions')
+    container.style.visibility = 'hidden';
+    actions.style.visibility = 'visible';
+    actions.style.position = 'fixed';
+    // actions.style.bottom = '0.1rem';
+    actions.style.background = 'black';
+    localStorage.setItem('consoleMinimized', 'true')
+  }
+
+  function restoreConsole() {
+    var actions = container.querySelector('.console-actions')
+    container.style.visibility = 'visible';
+    // actions.style.position = 'absolute';
+    localStorage.setItem('consoleMinimized', 'false')
+  }
+
   var shifted = false;
   function shiftConsoleActions() {
     if (consoleOuter.scrollHeight > consoleOuter.clientHeight) {
@@ -437,6 +464,10 @@ REPLConsole.prototype.install = function(container) {
 
   findChild(container, 'resizer').addEventListener('mousedown', resizeContainer);
   findChild(consoleActions, 'close-button').addEventListener('click', closeContainer);
+  findChild(consoleActions, 'toggle-button').addEventListener('click', toggleConsoleVisibility);
+
+  // this is so console visibility (i.e., minimized state) will persist
+  document.addEventListener('DOMContentLoaded', toggleConsoleVisibility);
   observer.observe(consoleOuter, { childList: true, subtree: true });
 
   REPLConsole.currentSession = this;
