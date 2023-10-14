@@ -119,6 +119,9 @@
 
 .console .console-actions {
   padding-right: 3px;
+  margin-right: 1rem; /* allow room for scrollbar on right on some browsers */
+  bottom: 0rem;
+  padding:0.2rem 0.3rem 0.5rem;
 }
 
 .console .console-actions .button {
@@ -132,7 +135,6 @@
   font-size: 1.2rem;
   width: 1.5rem;
   height: 1.5rem;
-  margin-right: 1.5rem; /* allow room for scrollbar on right on some browsers */
   line-height: 1.4rem;
   text-align: center;
   color: #ccc;
@@ -141,6 +143,11 @@
 .console .button:hover {
   background: #666;
   color: #fff;
+}
+
+.console .toggle-button {
+  position: relative;
+  top: -0.3rem; /* adjust because we're using an underscore character for the button */
 }
 
 .console .button.close-button:hover {
