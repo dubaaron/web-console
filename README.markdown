@@ -1,11 +1,11 @@
 <p align=right>
-  <strong>Current version: 4.1.0</strong> | Documentation for:
+  <strong>Current version: 4.2.0</strong> | Documentation for:
   <a href=https://github.com/rails/web-console/tree/v1.0.4>v1.0.4</a>
   <a href=https://github.com/rails/web-console/tree/v2.2.1>v2.2.1</a>
   <a href=https://github.com/rails/web-console/tree/v3.7.0>v3.7.0</a>
 </p>
 
-# Web Console [![Build Status](https://travis-ci.org/rails/web-console.svg?branch=master)](https://travis-ci.org/rails/web-console)
+# Web Console [![CI](https://github.com/rails/web-console/actions/workflows/ci.yml/badge.svg)](https://github.com/rails/web-console/actions/workflows/ci.yml)
 
 _Web Console_ is a debugging tool for your Ruby on Rails applications.
 
